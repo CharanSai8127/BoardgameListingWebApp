@@ -10,9 +10,9 @@ pipeline {
     }
     
     stages {        
-        stage('Compile') {
+        stage('Git-checkout') {
             steps {
-                sh "mvn compile"
+                git 'https://github.com/jaiswaladi2468/BoardgameListingWebApp.git'
             }
         }
         
