@@ -6,13 +6,13 @@ pipeline {
     
     tools {
         maven 'maven'
-        jdk 'jdk17'
+        jdk 'jdk 17'
     }
     
     stages {        
-        stage('Compile') {
+        stage('Git-checkout') {
             steps {
-                sh "mvn compile"
+                git 'https://github.com/jaiswaladi2468/BoardgameListingWebApp.git'
             }
         }
         
