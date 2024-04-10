@@ -6,8 +6,6 @@ pipeline {
         jdk 'jdk17'
     }
     
-    
-
     stages {        
         stage('Compile') {
             steps {
@@ -19,9 +17,6 @@ pipeline {
             steps {
                 sh "mvn test"
             }
-        }
-        
-        
         }
         
         stage('Build') {
