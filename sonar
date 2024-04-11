@@ -33,12 +33,22 @@ pipeline {
         
         stage('Sonarqube') {
             steps {
-                withSonarQubeEnv('sonar') {
+                withSonarQubeEnv('sonar-1') {
                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=Boardgame -Dsonar.projectKey=Board \
-                   -Dsonar.java.binaries=. '''
+                   -Dsonar.branch.name=pre-master -Dsonar.java.binaries=. '''
 }
             }
         }
+        
+        stage('Quality-gatecheck') {
+            steps {
+                script {
+                    waitForQualityGate abortPipeline: false, credentialsId: 'new-sonar-token'
+                }
+            }
+        }
+        
+        
         stage('Build') {
             steps {
                 sh 'mvn package'
