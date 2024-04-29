@@ -20,7 +20,7 @@ jobs:
       - uses: actions/upload-artifact@4
         with:
           name: Boardgame
-          path: target/*jar
+          path: target/*.jar
       - name: Trivy
         run: |
           trivy fs --format -o report.html .
