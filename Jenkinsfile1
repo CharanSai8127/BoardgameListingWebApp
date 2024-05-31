@@ -1,12 +1,10 @@
 pipeline {
-    agent {
-       label 'new-one'
-   }
+    agent any
 
     
     tools {
         maven 'maven'
-        jdk 'jdk 17'
+        
     }
     
     stages {        
