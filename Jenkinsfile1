@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-       label 'new-one' 
-   }
+    agent any
 
     
     tools {
