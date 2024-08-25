@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: boardgame
-          image: charansait372/shopping-cart:latestv2
+          image: charansait372/boardgame:v561
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
