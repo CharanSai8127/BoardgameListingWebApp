@@ -8,7 +8,7 @@ pipeline {
     }
     
     stages {        
-        stage('Git-scm') {
+        stage('Git-scm1') {
             steps {
                 git 'https://github.com/CharanSai8127/BoardgameListingWebApp.git'
             }
