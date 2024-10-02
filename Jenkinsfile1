@@ -1,5 +1,8 @@
 pipeline {
-    agent (label 'new')
+    agent {
+        label 'new' 
+}
+}
 
     
     tools { 
