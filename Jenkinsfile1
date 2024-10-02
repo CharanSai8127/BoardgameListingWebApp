@@ -20,7 +20,7 @@ pipeline {
             }
         }
         
-        stage('Build-new') {
+        stage('Build-new1') {
             steps {
                 sh "mvn package"
             }
