@@ -1,29 +1,25 @@
+
 pipeline {
     agent {
-        label 'new' 
-}
+            label 'new'
 }
 
-    
+
     tools { 
         maven 'maven 3'
         jdk 'jdk 21'
-        
     }
-    
     stages {        
         stage('Git-checkout') {
             steps {
                 git 'https://github.com/CharanSai8127/BoardgameListingWebApp.git'
             }
         }
-        
         stage('Test') {
             steps {
                 sh "mvn test"
             }
         }
-        
         stage('Build') {
             steps {
                 sh "mvn package"
